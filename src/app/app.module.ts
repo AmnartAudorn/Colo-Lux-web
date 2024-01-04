@@ -10,6 +10,7 @@ import { AboutUsComponent } from './page/about-us/about-us.component';
 import { AppointmentComponent } from './page/appointment/appointment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NewComponent } from './page/new/new.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FooterComponent,
     AboutUsComponent,
     AppointmentComponent,
+    NewComponent,
   ],
   imports: [
     BrowserModule,

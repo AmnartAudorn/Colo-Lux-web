@@ -98,7 +98,7 @@ export class AuthService {
       `Bearer ${token}`
     );
     return this._http
-      .post(`${''}`, body, { headers: this._headers })
+      .post(`${'appointment'}`, body, { headers: this._headers })
       .pipe(map((res) => res));
   }
 
