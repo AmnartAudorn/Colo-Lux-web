@@ -1,27 +1,17 @@
-# AWS CodeBuild pipeline
-version: 0.1
-env:
-  variables:
-    S3_BUCKET: "cololuxweb"
+version: 0.2
 phases:
   install:
     runtime-versions:
       nodejs: 18
-  pre_build:
     commands:
-      - echo Installing source NPM dependencies...
-      - npm install --legacy-peer-deps
+      - echo "Installing dependencies..."
+      - npm install
       - npm install -g @angular/cli
   build:
     commands:
-      - echo Build started on `date`
+      - echo "Building Angular project..."
       - ng build --configuration production
   post_build:
     commands:
-      - aws s3 sync dist/Colo-Lux-Web/ s3://cololuxweb --delete
-      - echo Build completed on `date`
-artifacts:
-  files:
-    - "**/*"
-  base-directory: "dist*"
-  discard-paths: yes
+      - echo "Updating files in the S3 bucket..."
+      - aws s3 sync dist/colo-lux-web/ s3://cololuxweb --delete
