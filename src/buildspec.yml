@@ -15,10 +15,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - ng build --configuration production --aot
+      - ng build --configuration production
   post_build:
     commands:
-      - aws s3 cp dist s3://${S3_BUCKET} --recursive
+      - aws s3 sync dist/Colo-Lux-Web/ s3://${S3_BUCKET} --delete
       - echo Build completed on `date`
 artifacts:
   files:
