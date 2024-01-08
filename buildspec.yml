@@ -1,12 +1,12 @@
 # AWS CodeBuild pipeline
-version: 0.2
+version: 0.1
 env:
   variables:
     S3_BUCKET: "cololuxweb"
 phases:
   install:
     runtime-versions:
-      nodejs: 18.16.1
+      nodejs: 18
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
@@ -18,7 +18,7 @@ phases:
       - ng build --configuration production
   post_build:
     commands:
-      - aws s3 sync dist/Colo-Lux-Web/ s3://${S3_BUCKET} --delete
+      - aws s3 sync dist/Colo-Lux-Web/ s3://cololuxweb --delete
       - echo Build completed on `date`
 artifacts:
   files:
