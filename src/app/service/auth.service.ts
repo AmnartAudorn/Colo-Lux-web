@@ -8,7 +8,7 @@ import { API_URL } from '../shared/constants/api.constant';
 import { SessionCookieUtil } from '../shared/utils/session-cookie.util';
 
 const ENUM_HEADER = {
-  X_RELAYED: `x-relayed-host`,
+  X_API_KEY: `X-API-KEY`,
   IGIS_SERVICE: `igis.service.client`,
   AUTHORIZATION: `Authorization`,
 };
@@ -64,12 +64,8 @@ export class AuthService {
   }
 
   public getAllProduct(): Observable<any> {
-    const token = this._sessionCookie.getAccessToken();
     this._headers = new HttpHeaders();
-    this._headers = this._headers.set(
-      ENUM_HEADER.AUTHORIZATION,
-      `Bearer ${token}`
-    );
+    this._headers = this._headers.set(ENUM_HEADER.X_API_KEY, `Baeldung`);
     return this._http
       .get(`${API_URL.GET_PRODUCT}`, { headers: this._headers })
       .pipe(map((res) => res));
@@ -93,12 +89,9 @@ export class AuthService {
     const token = this._sessionCookie.getAccessToken();
     console.log(token);
     this._headers = new HttpHeaders();
-    this._headers = this._headers.set(
-      ENUM_HEADER.AUTHORIZATION,
-      `Bearer ${token}`
-    );
+    this._headers = this._headers.set(ENUM_HEADER.X_API_KEY, `Baeldung`);
     return this._http
-      .post(`${'appointment'}`, body, { headers: this._headers })
+      .post(`${API_URL.SAVE_APPOINTMENT}`, body, { headers: this._headers })
       .pipe(map((res) => res));
   }
 

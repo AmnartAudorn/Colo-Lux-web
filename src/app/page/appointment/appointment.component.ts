@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
+import { IProduct } from 'src/app/Interfaces/product-Interfaces';
 import { AuthService } from 'src/app/service/auth.service';
 import { SessionCookieUtil } from 'src/app/shared/utils/session-cookie.util';
 
@@ -11,13 +11,16 @@ import { SessionCookieUtil } from 'src/app/shared/utils/session-cookie.util';
   styleUrls: ['./appointment.component.css'],
 })
 export class AppointmentComponent implements OnInit {
+  public product: IProduct[] = [];
+
   public myGroup = new FormGroup({
     name: new FormControl(),
     nickName: new FormControl(),
-    datepicker: new FormControl(),
+    birthday: new FormControl(),
     email: new FormControl(),
     phone: new FormControl(),
     address: new FormControl(),
+    price: new FormControl(),
   });
 
   constructor(
@@ -29,22 +32,28 @@ export class AppointmentComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.checkAuth();
+    this.getProduct();
   }
 
-  public checkAuth() {
-    if (!this._sessionCookie.getAccessToken())
-      this._router.navigate(['appointment']);
+  // public checkAuth() {
+  //   if (!this._sessionCookie.getAccessToken())
+  //     this._router.navigate(['appointment']);
+  // }
+
+  public getProduct() {
+    this._authService.getAllProduct().subscribe((result) => {
+      this.product = result;
+    });
+  }
+
+  public selectProduct(product: IProduct) {
+    console.log(product.price);
+    this.myGroup.controls.price.setValue(product.price);
   }
 
   public createAppointment() {
-    this._authService
-      .createAppointment(this.myGroup.value)
-      .subscribe((token) => {
-        if (token) {
-          console.log(this.myGroup.value);
-          // this._router.navigate(['/home']);
-        }
-      });
+    this._authService.createAppointment(this.myGroup.value).subscribe(() => {
+      console.log(this.myGroup.value);
+    });
   }
 }
