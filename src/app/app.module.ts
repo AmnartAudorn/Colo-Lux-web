@@ -11,6 +11,7 @@ import { AppointmentComponent } from './page/appointment/appointment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NewComponent } from './page/new/new.component';
+import { DetailComponent } from './page/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NewComponent } from './page/new/new.component';
     AboutUsComponent,
     AppointmentComponent,
     NewComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

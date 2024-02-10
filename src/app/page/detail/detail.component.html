@@ -1,0 +1,250 @@
+<!-- Breadcrumbs -->
+<div class="breadcrumbs overlay">
+  <div class="container">
+    <div class="bread-inner">
+      <div class="row">
+        <div class="col-12">
+          <h2>Colorectal Cancer</h2>
+          <ul class="bread-list">
+            <li><a href="">Home</a></li>
+            <li><i class="icofont-simple-right"></i></li>
+            <li class="active">Details Colorectal Cancer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<div class="service-details-area section">
+  <div class="container">
+    <div class="services-details-img">
+      <img src="../../../assets/img/service-details-bg.jpg" alt="" />
+      <h2>Our hospital always provide good services</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="service-details-inner-left">
+          <img src="../../../assets/img/blog3.jpg" alt="" />
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="service-details-inner">
+          <h2>
+            Basic Colorectal Cancer <br />
+            Risk Assessment
+          </h2>
+          <p>
+            Internal examination of the digestive tract is conducted using
+            imaging equipment through two methods: oral insertion and rectal
+            insertion, aiming for a detailed inspection to identify
+            abnormalities such as infections or abnormal tissue growths. The
+            program also includes a surgical procedure for examining
+            internal growths.
+          </p>
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+            start
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModal">Personal Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 col-md-offset-3">
+            <form [formGroup]="personalDetails" id="msform">
+              <!-- progressbar -->
+              <ul id="progressbar">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="25" [ngStyle]="{'width.%': step*10 }" aria-valuemax=" 100"></div>
+                </div>
+              </ul>
+
+              <!-- fieldsets -->
+              <fieldset *ngIf="step == 1">
+                <h5 class="modal-title">Personal Details</h5>
+                <input type="text" formControlName="name" [ngClass]="{
+                    'is-invalid': personal_step
+                  }" placeholder="Full Name" />
+                <div>
+                  <div>Name is required</div>
+                </div>
+                <input type="text" formControlName="email" name="email" placeholder="Email" />
+                <div>
+                  <div>Email is required</div>
+                </div>
+                <input type="text" formControlName="phone" name="phone" placeholder="Phone" />
+                <div>
+                  <div>Phone is required</div>
+                </div>
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms2" id="msform">
+              <fieldset *ngIf="step == 2">
+                <h5 class="modal-title">
+                  Terms of Use for Personal Data of Samitivej (SAMITIVEJ PDPA)
+                </h5>
+                <p>*We will collect customer data for future colorectal cancer risk statistics.</p>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms2" value="YES" name="terms2" style="width: 5%" />Acceptance of the Terms of Use<br />
+                  <input type="radio" formControlName="terms2" value="NO" name="terms2" style="width: 5%" />Refusal to Accept the Terms of Use
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms3" id="msform">
+              <fieldset *ngIf="step == 3">
+                <h5 class="modal-title">
+                  Age 45 and above*
+                </h5>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms3" value="YES" name="terms3" style="width: 5%" />YES<br />
+                  <input type="radio" formControlName="terms3" value="NO" name="terms3" style="width: 5%" />NO
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms4" id="msform">
+              <fieldset *ngIf="step == 4">
+                <h5 class="modal-title">
+                  Family history, especially immediate relatives (father, mother, siblings), of colorectal cancer*
+                </h5>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms4" value="YES" name="terms4" style="width: 5%" />YES<br />
+                  <input type="radio" formControlName="terms4" value="NO" name="terms4" style="width: 5%" />NO
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms5" id="msform">
+              <fieldset *ngIf="step == 5">
+                <h5 class="modal-title">
+                  Experiencing any of the following abnormal bowel movements: constipation, alternating constipation and diarrhea,
+                  chronic diarrhea, passing stool mixed with blood, or passing unusually small stools*
+                </h5>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms5" value="YES" name="terms5" style="width: 5%" />YES<br />
+                  <input type="radio" formControlName="terms5" value="NO" name="terms5" style="width: 5%" />NO
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms6" id="msform">
+              <fieldset *ngIf="step == 6">
+                <h5 class="modal-title">
+                  Experiencing symptoms of bloating, gas, and frequent abdominal pain*
+                </h5>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms6" value="YES" name="terms6" style="width: 5%" />YES<br />
+                  <input type="radio" formControlName="terms6" value="NO" name="terms6" style="width: 5%" />NO
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms7" id="msform">
+              <fieldset *ngIf="step == 7">
+                <h5 class="modal-title">
+                  Having anemia or unexplained weight loss*
+                </h5>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms7" value="YES" name="terms7" style="width: 5%" />YES<br />
+                  <input type="radio" formControlName="terms7" value="NO" name="terms7" style="width: 5%" />NO
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms8" id="msform">
+              <fieldset *ngIf="step == 8">
+                <h5 class="modal-title">
+                  Prefers consuming meat and fatty foods regularly*
+                </h5>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms8" value="YES" name="terms8" style="width: 5%" />YES<br />
+                  <input type="radio" formControlName="terms8" value="NO" name="terms8" style="width: 5%" />NO
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms9" id="msform">
+              <fieldset *ngIf="step == 9">
+                <h5 class="modal-title">
+                  Do not consume vegetables and fruits regularly, and drink less than 1 liter of water per day*
+                </h5>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms9" value="YES" name="terms9" style="width: 5%" />YES<br />
+                  <input type="radio" formControlName="terms9" value="NO" name="terms9" style="width: 5%" />NO
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+            <form [formGroup]="terms10" id="msform">
+              <fieldset *ngIf="step == 10">
+                <h5 class="modal-title">
+                  Drink alcohol or smoke cigarettes*
+                </h5>
+                <div style="text-align: left">
+                  <input type="radio" formControlName="terms10" value="YES" name="terms10" style="width: 5%" />YES<br />
+                  <input type="radio" formControlName="terms10" value="NO" name="terms10" style="width: 5%" />NO
+                </div>
+                <br />
+                <input (click)="previous()" type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input (click)="next()" type="button" name="next" class="next action-button" value="Next" />
+              </fieldset>
+            </form>
+
+
+            <form [formGroup]="addressDetails" id="msform">
+              <fieldset *ngIf="step == 11">
+                <div>
+                  <h1>Your score is {{sumpercen}}</h1>
+                  <h1>The risk level is {{risk}}</h1>
+                  <img src="../../../assets/img/spectrum-2jpg-01.jpg" alt="">
+                  <p>A score of 0 means that you have no identified risk factors or common symptoms associated with colorectal cancer. Therefore, you have almost no risk of developing colorectal cancer. It is recommended that you maintain this level of health and regularly monitor yourself. If you
+                    notice any abnormal symptoms, it is advisable to consult a doctor.</p>
+                  <p>B score of 1-21 indicates that you have some risk factors and common symptoms associated with colorectal cancer. It is recommended to consult a gastroenterologist or hepatologist for diagnosis and advice on management.</p>
+                  <p>C score of 22-44 indicates that you have a high risk of colorectal cancer, with at least one risk factor (age 45 and above or family history of colorectal cancer), as well as other common symptoms associated with colorectal cancer. It is strongly recommended to consult a
+                    gastroenterologist or hepatologist for diagnosis and advice on management.</p>
+                  <p>D score of 45-50 indicates that you have both high-risk factors: being aged 45 and above, and having a family history of colorectal cancer, along with other common symptoms associated with colorectal cancer. It is strongly advised to promptly consult a gastroenterologist or
+                    hepatologist to seek advice and guidance on colorectal cancer screening.</p>
+                </div>
+                <button type="button" class="submit action-button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">Close</span>
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

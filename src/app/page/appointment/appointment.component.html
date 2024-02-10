@@ -4,11 +4,11 @@
     <div class="bread-inner">
       <div class="row">
         <div class="col-12">
-          <h2>Book Appointment</h2>
+          <h2>Contact Us</h2>
           <ul class="bread-list">
             <li><a href="">Home</a></li>
             <li><i class="icofont-simple-right"></i></li>
-            <li class="active">Book Appointment</li>
+            <li class="active">Contact Us</li>
           </ul>
         </div>
       </div>
@@ -23,100 +23,39 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="section-title">
-          <h2>We Are Always Ready to Help You. Book An Appointment</h2>
+          <h2>We Are Always Ready to Help You. Contact Us</h2>
           <img src="../../../assets/img/section-img.png" alt="#" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit praesent
-            aliquet. pretiumts
-          </p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-12">
-        <form
-          class="form"
-          [formGroup]="myGroup"
-          (ngSubmit)="createAppointment()"
-        >
+        <form class="form" [formGroup]="myGroup" (ngSubmit)="createAppointment()">
           <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
               <div class="form-group">
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Name"
-                  formControlName="name"
-                />
+                <input name="name" type="text" placeholder="Name" formControlName="name" />
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
               <div class="form-group">
-                <input
-                  name="nick-name"
-                  type="text"
-                  placeholder="Nick Name"
-                  formControlName="nickName"
-                />
+                <input name="nick-name" type="text" placeholder="Nick Name" formControlName="nickName" />
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
               <div class="form-group">
-                <input
-                  name="birthday"
-                  type="text"
-                  placeholder="Birthday"
-                  id="datepicker"
-                  formControlName="birthday"
-                />
+                <input name="email" type="email" placeholder="Email" formControlName="email" email />
               </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
               <div class="form-group">
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  formControlName="email"
-                  email
-                />
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12">
-              <div class="form-group">
-                <input
-                  name="phone"
-                  type="text"
-                  placeholder="Phone"
-                  formControlName="phone"
-                />
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12">
-              <div class="form-group">
-                <div class="nice-select form-control wide" tabindex="0">
-                  <span class="current">Please select a service group.</span>
-                  <ul class="list">
-                    <li
-                      data-value="{{ i }}"
-                      *ngFor="let products of product; let i = index"
-                      class="option"
-                      (click)="selectProduct(products)"
-                    >
-                      {{ products.details }}
-                    </li>
-                  </ul>
-                </div>
+                <input name="phone" type="text" placeholder="Phone" formControlName="phone" />
               </div>
             </div>
 
             <div class="col-lg-12 col-md-12 col-12">
               <div class="form-group">
-                <textarea
-                  name="address"
-                  placeholder="Write Address Here....."
-                  formControlName="address"
-                ></textarea>
+                <textarea name="details" placeholder="Write details Here....." formControlName="details"></textarea>
               </div>
             </div>
           </div>
@@ -124,7 +63,7 @@
             <div class="col-lg-5 col-md-4 col-12">
               <div class="form-group">
                 <div class="button">
-                  <button type="submit" class="btn">Book An Appointment</button>
+                  <button type="submit" class="btn">sent message</button>
                 </div>
               </div>
             </div>
