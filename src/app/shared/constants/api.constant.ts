@@ -11,5 +11,7 @@ export const API_URL = {
   GET_PRODUCT_BY_ID: `${BASE_URL}/get/product/code`,
   SAVE_PRODUCT: `${BASE_URL}/create/product`,
   SAVE_APPOINTMENT: `${BASE_URL}/create/appointment`,
+  SAVE_ASSESSMENT: `${BASE_URL}/create/rickAssessment`,
   DELETE_PRODUCT: `${BASE_URL}/delete/product`,
+  CLICK: `${BASE_URL}/click`,
 };

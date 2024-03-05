@@ -20,6 +20,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "src/assets/css/animate.min.css",
               "src/assets/css/bootstrap.min.css",
@@ -34,13 +35,12 @@
               "src/assets/css/slicknav.min.css"
             ],
             "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/jquery.min.js",
-              "src/assets/js/jquery-migrate-3.0.0.js",
               "src/assets/js/jquery-ui.min.js",
               "src/assets/js/easing.js",
               "src/assets/js/colors.js",
               "src/assets/js/popper.min.js",
-              "src/assets/js/bootstrap-datepicker.js",
               "src/assets/js/jquery.nav.js",
               "src/assets/js/slicknav.min.js",
               "src/assets/js/jquery.scrollUp.min.js",

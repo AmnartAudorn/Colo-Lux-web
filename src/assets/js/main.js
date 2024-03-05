@@ -32,6 +32,7 @@ Version:	1.1
 =========================================
 [End Activation Code]
 =========================================*/
+
 (function ($) {
   "use strict";
   $(document).on("ready", function () {
@@ -42,6 +43,8 @@ Version:	1.1
         $("#header .header-inner").removeClass("sticky");
       }
     });
+
+  
 
     /*====================================
 			Sticky Header JS
@@ -87,8 +90,6 @@ Version:	1.1
       items: 1,
       nav: true,
       navText: [
-        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>',
       ],
       dots: false,
     });
@@ -230,9 +231,6 @@ Version:	1.1
     /*=====================================
 			Date Picker JS
 		======================================*/
-    $(function () {
-      $("#datepicker").datepicker();
-    });
 
     /*===============================
 			Checkbox JS

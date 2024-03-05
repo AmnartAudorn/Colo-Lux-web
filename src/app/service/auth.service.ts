@@ -86,8 +86,6 @@ export class AuthService {
   }
 
   public createAppointment(body: any): Observable<any> {
-    const token = this._sessionCookie.getAccessToken();
-    console.log(token);
     this._headers = new HttpHeaders();
     this._headers = this._headers.set(ENUM_HEADER.X_API_KEY, `Baeldung`);
     return this._http
@@ -95,7 +93,23 @@ export class AuthService {
       .pipe(map((res) => res));
   }
 
+  public createAssessment(body: any): Observable<any> {
+    this._headers = new HttpHeaders();
+    this._headers = this._headers.set(ENUM_HEADER.X_API_KEY, `Baeldung`);
+    return this._http
+      .post(`${API_URL.SAVE_ASSESSMENT}`, body, { headers: this._headers })
+      .pipe(map((res) => res));
+  }
+
   clearAllSessionData() {
     this._sessionCookie.clearAll();
+  }
+
+  click(body: any): Observable<any> {
+    this._headers = new HttpHeaders();
+    this._headers = this._headers.set(ENUM_HEADER.X_API_KEY, `Baeldung`);
+    return this._http
+      .post(`${API_URL.CLICK}`, body, { headers: this._headers })
+      .pipe(map((res) => res));
   }
 }

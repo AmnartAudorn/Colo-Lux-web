@@ -8,7 +8,6 @@ import { SessionCookieUtil } from 'src/app/shared/utils/session-cookie.util';
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
-  styleUrls: ['./appointment.component.css'],
 })
 export class AppointmentComponent implements OnInit {
   public product: IProduct[] = [];
@@ -16,11 +15,9 @@ export class AppointmentComponent implements OnInit {
   public myGroup = new FormGroup({
     name: new FormControl(),
     nickName: new FormControl(),
-    birthday: new FormControl(),
     email: new FormControl(),
     phone: new FormControl(),
-    address: new FormControl(),
-    price: new FormControl(),
+    details: new FormControl(),
   });
 
   constructor(
@@ -29,31 +26,29 @@ export class AppointmentComponent implements OnInit {
 
     private readonly _sessionCookie: SessionCookieUtil,
     private readonly _authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit() {
-    this.getProduct();
-  }
-
-  // public checkAuth() {
-  //   if (!this._sessionCookie.getAccessToken())
-  //     this._router.navigate(['appointment']);
-  // }
-
-  public getProduct() {
-    this._authService.getAllProduct().subscribe((result) => {
-      this.product = result;
-    });
-  }
-
-  public selectProduct(product: IProduct) {
-    console.log(product.price);
-    this.myGroup.controls.price.setValue(product.price);
+    this.click();
   }
 
   public createAppointment() {
     this._authService.createAppointment(this.myGroup.value).subscribe(() => {
       console.log(this.myGroup.value);
     });
+  }
+
+  public click() {
+    const body = {
+      "sumHome": 0,
+      "sumContact": 1,
+      "sumAbout": 0,
+      "sumRick": 0,
+      "sumFacebook": 0,
+      "sumLine": 0,
+      "sumWechat": 0
+  }
+
+    this._authService.click(body).subscribe(() => { });
   }
 }

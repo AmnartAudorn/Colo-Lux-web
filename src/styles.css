@@ -143,6 +143,28 @@ body {
 #scrollUp:hover {
   background: #2c2d3f;
 }
+
+.iconBar {
+  display: inline-block;
+}
+
+.iconBar a {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  /* transition: all 0.3s ease; */
+  color: white;
+  font-size: 20px;
+}
+
+.social {
+  max-width: 10%;
+  border-radius: 100%;
+  color: #ffffff;
+}
+
+
 /* Color Plate */
 .color-plate {
   position: fixed;
@@ -279,7 +301,7 @@ body {
 }
 .header .top-contact {
   float: right;
-  margin-top:7% ;
+  margin-top:5% ;
 }
 .header .top-contact li {
   display: inline-block;
@@ -593,19 +615,17 @@ body {
 /*===========================
 	Start Hero Area CSS
 =============================*/
-.slider .single-slider {
+.carousel .carousel-caption {
   height: 600px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.slider .single-slider .text {
+.carousel .carousel-caption .text {
   margin-top: 120px;
 }
-.slider.index2 .single-slider .text {
-  margin-top: 150px;
-}
-.slider .single-slider h1 {
+
+.carousel .carousel-caption h1 {
   color: #2c2d3f;
   font-size: 38px;
   font-weight: 700;
@@ -613,18 +633,18 @@ body {
   padding: 0;
   line-height: 42px;
 }
-.slider .single-slider h1 span {
+.carousel .carousel-caption h1 span {
   color: #1a76d1;
 }
-.slider .single-slider p {
+.carousel .carousel-caption p {
   color: #2c2d3f;
   margin-top: 27px;
   font-weight: 400;
 }
-.slider .single-slider .button {
+.carousel .carousel-caption .button {
   margin-top: 30px;
 }
-.slider .single-slider .btn {
+.carousel .carousel-caption .btn {
   color: #fff;
   background: #1a76d1;
   font-weight: 500;
@@ -632,24 +652,24 @@ body {
   margin: 0;
   margin-right: 10px;
 }
-.slider .single-slider .btn:last-child {
+.carousel .carousel-caption .btn:last-child {
   margin: 0;
 }
-.slider .single-slider .btn.primary {
+.carousel .carousel-caption .btn.primary {
   background: #2c2d3f;
   color: #fff;
 }
-.slider .single-slider .btn.primary:before {
+.carousel .carousel-caption .btn.primary:before {
   background: #1a76d1;
 }
-.slider .owl-carousel .owl-nav {
+.carousel .owl-carousel .owl-nav {
   margin: 0;
   position: absolute;
   top: 50%;
   width: 100%;
   margin-top: -25px;
 }
-.slider .owl-carousel .owl-nav div {
+/* .slider .owl-carousel .owl-nav div {
   height: 50px;
   width: 50px;
   line-height: 50px;
@@ -664,26 +684,26 @@ body {
   transition: all 0.4s ease;
   padding: 0;
   border-radius: 50%;
-}
-.slider .owl-carousel .owl-nav div:hover {
+} */
+.carousel slide .owl-carousel .owl-nav div:hover {
   background: #2c2d3f;
   color: #fff;
 }
-.slider .owl-carousel .owl-controls .owl-nav .owl-prev {
+.carousel slide .owl-carousel .owl-controls .owl-nav .owl-prev {
   left: 20px;
 }
-.slider .owl-carousel .owl-controls .owl-nav .owl-next {
+.carousel slide .owl-carousel .owl-controls .owl-nav .owl-next {
   right: 20px;
 }
 
 /* Slider Animation */
-.owl-item.active .single-slider h1 {
+.owl-item.active .carousel-caption h1 {
   animation: fadeInUp 1s both 0.6s;
 }
-.owl-item.active .single-slider p {
+.owl-item.active .carousel-caption p {
   animation: fadeInUp 1s both 1s;
 }
-.owl-item.active .single-slider .button {
+.owl-item.active .carousel-caption .button {
   animation: fadeInDown 1s both 1.5s;
 }
 /*===========================
@@ -1084,22 +1104,22 @@ body {
   padding: 100px 265px;
 }
 .call-action .content h2 {
-  color: #fff;
+  color: #111010;
   font-size: 32px;
   font-weight: 600;
   line-height: 46px;
 }
 .call-action .content p {
-  color: #fff;
+  color: #1b1717;
   margin: 30px 0px;
   font-size: 15px;
 }
 .call-action .content .btn {
-  background: #fff;
+  background: #630ee3;
   margin-right: 20px;
   font-weight: 500;
-  border: 1px solid #fff;
-  color: #1a76d1;
+  /* border: 1px solid #fff; */
+  color: #ffffff;
 }
 .call-action .content .btn:before {
   background: #1a76d1;
@@ -1721,7 +1741,7 @@ body {
 	Start Clients CSS
 ==========================*/
 .clients {
-  /* background-image: url("../src/assets/img/client-bg.jpg"); */
+  background-image: url("../src/assets/img/client-bg.jpg");
   background-size: cover;
   background-position: center;
   padding: 100px 0px;

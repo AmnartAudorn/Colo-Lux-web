@@ -10,7 +10,6 @@ import { AboutUsComponent } from './page/about-us/about-us.component';
 import { AppointmentComponent } from './page/appointment/appointment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NewComponent } from './page/new/new.component';
 import { DetailComponent } from './page/detail/detail.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { DetailComponent } from './page/detail/detail.component';
     FooterComponent,
     AboutUsComponent,
     AppointmentComponent,
-    NewComponent,
     DetailComponent,
   ],
   imports: [

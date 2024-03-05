@@ -51,6 +51,7 @@ Version:	1.1
   #scrollUp {
     bottom: 55px;
   }
+ 
   .header .top-link li a {
     font-size: 13px;
   }
@@ -128,7 +129,7 @@ Version:	1.1
   .header.style2 .right-bar {
     padding-top: 15px;
   }
-  .slider .single-slider {
+  .carousel .carousel-caption {
     height: 380px;
   }
   .schedule {
@@ -145,10 +146,14 @@ Version:	1.1
   .schedule .single-schedule.last {
     margin-top: 30px;
   }
-  .slider .single-slider {
+  .carousel .carousel-caption {
     position: relative;
   }
-  .slider .single-slider:before {
+
+  .carousel {
+    position: relative;
+  }
+  /* .carousel .carousel-caption:before {
     position: absolute;
     content: "";
     left: 0;
@@ -157,19 +162,21 @@ Version:	1.1
     width: 100%;
     background: #fff;
     opacity: 0.5;
-  }
-  .slider .single-slider h1 {
+  } */
+  .carousel .carousel-caption h1 {
     font-size: 28px;
     font-weight: 600;
     line-height: 35px;
   }
-  .slider .single-slider .text {
+  .carousel .carousel-caption .text {
+    text-align: center;
+    margin-top: 80px;
+    width: 70%;
+  }
+  .carousel.index2 .carousel-caption .text {
     margin-top: 80px;
   }
-  .slider.index2 .single-slider .text {
-    margin-top: 80px;
-  }
-  .slider .owl-carousel .owl-nav div {
+  .carousel .owl-carousel .owl-nav div {
     height: 40px;
     width: 40px;
     line-height: 40px;
@@ -694,7 +701,7 @@ Version:	1.1
     text-align: center;
     margin-top: 3%;
   }
-  .slider .single-slider {
+  .carousel .carousel-caption {
     height: 380px;
   }
   .schedule {
@@ -711,10 +718,13 @@ Version:	1.1
   .schedule .single-schedule {
     margin: 15px 0;
   }
-  .slider .single-slider {
+  .carousel .carousel-caption {
     position: relative;
   }
-  .slider .single-slider:before {
+  .carousel {
+    position: relative;
+  }
+  /* .carousel .carousel-caption:before {
     position: absolute;
     content: "";
     left: 0;
@@ -723,19 +733,21 @@ Version:	1.1
     width: 100%;
     background: #fff;
     opacity: 0.5;
-  }
-  .slider .single-slider h1 {
-    font-size: 28px;
+  } */
+  .carousel .carousel-caption h1, h2 {
+    font-size: 25px;
     font-weight: 600;
-    line-height: 35px;
+    line-height: 25px;
   }
-  .slider .single-slider .text {
+  .carousel .carousel-caption .text {
+    text-align: center;
+    margin-top: 80px;
+    width: 70%;
+  }
+  .carousel.index2 .carousel-caption .text {
     margin-top: 80px;
   }
-  .slider.index2 .single-slider .text {
-    margin-top: 80px;
-  }
-  .slider .owl-carousel .owl-nav div {
+  .carousel .owl-carousel .owl-nav div {
     height: 40px;
     width: 40px;
     line-height: 40px;
@@ -1178,9 +1190,10 @@ Version:	1.1
     float: none;
     text-align: center;
   }
-  .slider .single-slider {
+  .carousel .carousel-caption {
     height: 380px;
   }
+
   .schedule {
     background: #fff;
     margin: 0;
@@ -1195,10 +1208,11 @@ Version:	1.1
   .schedule .single-schedule {
     margin: 15px 0;
   }
-  .slider .single-slider {
+  .carousel .carousel-caption {
     position: relative;
+    /* margin-top: -45%; */
   }
-  .slider .single-slider:before {
+  /* .carousel .carousel-caption:before {
     position: absolute;
     content: "";
     left: 0;
@@ -1207,27 +1221,28 @@ Version:	1.1
     width: 100%;
     background: #fff;
     opacity: 0.5;
-  }
-  .slider .single-slider h1 {
+  } */
+  .carousel .carousel-caption h1 ,h2 {
     font-size: 20px;
     font-weight: 600;
-    line-height: 25px;
+    line-height: 20px;
   }
-  .slider .single-slider p {
+  .carousel .carousel-caption p {
     font-size: 13px;
   }
-  .slider .single-slider .text {
+  .carousel .carousel-caption .text {
     margin-top: 20px;
+    text-align: left;
   }
-  .slider .single-slider .button .btn {
+  .carousel .carousel-caption .button .btn {
     margin: 0;
     width: 100%;
     margin-bottom: 10px;
   }
-  .slider .single-slider .button .btn:last-child {
+  .carousel .carousel-caption .button .btn:last-child {
     margin-bottom: 0;
   }
-  .slider .owl-carousel .owl-nav {
+  .carousel .owl-carousel .owl-nav {
     display: none;
   }
   .Feautes .single-features .signle-icon i {

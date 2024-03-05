@@ -47,6 +47,7 @@ export class DetailComponent implements OnInit {
     private readonly _sessionCookie: SessionCookieUtil,
     private readonly _authService: AuthService) {}
   ngOnInit() {
+    this.click();
 
     this.personalDetails = this.formBuilder.group({
       name: ['', Validators.required],
@@ -224,10 +225,13 @@ export class DetailComponent implements OnInit {
           name : this.personalDetails.controls['name'].value,
           email: this.personalDetails.controls['email'].value,
           phone: this.personalDetails.controls['phone'].value,
-          risk : this.risk
+          risk : this.risk,
+          score : this.sumpercen,
+          terms : this.terms2.controls['terms2'].value
+
         }
   
-        this._authService.createAppointment(body).subscribe(() => {
+        this._authService.createAssessment(body).subscribe(() => {
           console.log(body);
         });
       }
@@ -313,6 +317,22 @@ export class DetailComponent implements OnInit {
         this.sumpercen -= 0;
       }
     }
-   
   }
+  public click() {
+    const body = {
+      "sumHome": 0,
+      "sumContact": 0,
+      "sumAbout": 0,
+      "sumRick": 1,
+      "sumFacebook": 0,
+      "sumLine": 0,
+      "sumWechat": 0
+  }
+
+    this._authService.click(body).subscribe(() => { });
+
+}
+
+
+ 
 }

@@ -1,5 +1,5 @@
 <!-- Breadcrumbs -->
-<div class="breadcrumbs overlay">
+<div class="breadcrumbs">
   <div class="container">
     <div class="bread-inner">
       <div class="row">
@@ -223,11 +223,11 @@
             </form>
 
 
-            <form [formGroup]="addressDetails" id="msform">
+            <form  id="msform">
               <fieldset *ngIf="step == 11">
                 <div>
-                  <h1>Your score is {{sumpercen}}</h1>
-                  <h1>The risk level is {{risk}}</h1>
+                  <h2>Your score is {{sumpercen}}</h2>
+                  <h3>The risk level is {{risk}}</h3>
                   <img src="../../../assets/img/spectrum-2jpg-01.jpg" alt="">
                   <p>A score of 0 means that you have no identified risk factors or common symptoms associated with colorectal cancer. Therefore, you have almost no risk of developing colorectal cancer. It is recommended that you maintain this level of health and regularly monitor yourself. If you
                     notice any abnormal symptoms, it is advisable to consult a doctor.</p>
