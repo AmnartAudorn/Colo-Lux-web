@@ -438,6 +438,7 @@ Version:	1.1
     background: transparent;
   }
   .slicknav_nav li {
+    color: #000;
   }
   .slicknav_nav li a {
     color: #2c2d3f;
@@ -492,6 +493,7 @@ Version:	1.1
   .slicknav_menu,
   .slicknav_menu * {
     box-sizing: border-box;
+    text-align: center;
   }
   .slicknav_btn {
     position: relative;
@@ -1227,8 +1229,16 @@ Version:	1.1
     font-weight: 600;
     line-height: 20px;
   }
+
+  .carousel .carousel-caption h1 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: -45%;
+  }
   .carousel .carousel-caption p {
     font-size: 13px;
+    margin-top: 35%;
   }
   .carousel .carousel-caption .text {
     margin-top: 20px;

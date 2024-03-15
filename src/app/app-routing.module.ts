@@ -11,10 +11,16 @@ const routes: Routes = [
   { path: 'about', component: AboutUsComponent },
   { path: 'appointment', component: AppointmentComponent },
   { path: 'detail', component: DetailComponent },
+  { path: '**', component: IndexComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      enableTracing: false,
+      scrollPositionRestoration: 'top',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -44,8 +44,6 @@ Version:	1.1
       }
     });
 
-  
-
     /*====================================
 			Sticky Header JS
 		======================================*/
@@ -75,6 +73,7 @@ Version:	1.1
       prependTo: ".mobile-nav",
       duration: 300,
       closeOnClick: true,
+      click: "",
     });
 
     /*===============================
@@ -89,8 +88,7 @@ Version:	1.1
       autoplayHoverPause: true,
       items: 1,
       nav: true,
-      navText: [
-      ],
+      navText: [],
       dots: false,
     });
 
@@ -263,10 +261,10 @@ Version:	1.1
     /*================
 			Wow JS
 		==================*/
-    var window_width = $(window).width();
-    if (window_width > 767) {
-      new WOW().init();
-    }
+    // var window_width = $(window).width();
+    // if (window_width > 767) {
+    //   new WOW().init();
+    // }
 
     /*===================
 			Scroll Up JS

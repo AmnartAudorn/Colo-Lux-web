@@ -11,6 +11,7 @@ import { AppointmentComponent } from './page/appointment/appointment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './page/detail/detail.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,10 @@ import { DetailComponent } from './page/detail/detail.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [HttpClient],
+  providers: [
+    HttpClient,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

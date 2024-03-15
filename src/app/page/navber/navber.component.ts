@@ -15,47 +15,58 @@ export class NavberComponent {
 
     private readonly _sessionCookie: SessionCookieUtil,
     private readonly _authService: AuthService
-  ) { }
+  ) {}
 
   menuActive() {}
 
-  public click(app : any) {
-    console.log("TERSET")
+  public click(app: any) {
+    console.log('TERSET');
     let sumApp = {};
-    if(app === 'FACEBOOK'){
+    if (app === 'FACEBOOK') {
       sumApp = {
-        "sumHome": 0,
-        "sumContact": 0,
-        "sumAbout": 0,
-        "sumRick": 0,
-        "sumFacebook": 1,
-        "sumLine": 0,
-        "sumWechat": 0
-      }
-    }else  if(app === 'LINE'){
+        sumHome: 0,
+        sumContact: 0,
+        sumAbout: 0,
+        sumRick: 0,
+        sumFacebook: 1,
+        sumLine: 0,
+        sumWechat: 0,
+      };
+    } else if (app === 'LINE') {
       sumApp = {
-        "sumHome": 0,
-        "sumContact": 0,
-        "sumAbout": 0,
-        "sumRick": 0,
-        "sumFacebook": 0,
-        "sumLine": 1,
-        "sumWechat": 0
-      }
-    }else  if(app === 'WECHAT'){
+        sumHome: 0,
+        sumContact: 0,
+        sumAbout: 0,
+        sumRick: 0,
+        sumFacebook: 0,
+        sumLine: 1,
+        sumWechat: 0,
+      };
+    } else if (app === 'WECHAT') {
       sumApp = {
-        "sumHome": 0,
-        "sumContact": 0,
-        "sumAbout": 0,
-        "sumRick": 0,
-        "sumFacebook": 0,
-        "sumLine": 0,
-        "sumWechat": 1
-      }
+        sumHome: 0,
+        sumContact: 0,
+        sumAbout: 0,
+        sumRick: 0,
+        sumFacebook: 0,
+        sumLine: 0,
+        sumWechat: 1,
+      };
     }
-    
 
-    this._authService.click(sumApp).subscribe(() => { });
+    this._authService.click(sumApp).subscribe(() => {});
+  }
 
-}
+  public home() {
+    console.log('TEST');
+    this._router.navigate(['/home']);
+  }
+
+  public about() {
+    this._router.navigate(['/about']);
+  }
+
+  public appointment() {
+    this._router.navigate(['/appointment']);
+  }
 }
